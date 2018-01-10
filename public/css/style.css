@@ -18,3 +18,7 @@ h4, p {
 	margin-left: 37%;
 }
 
+td:hover {
+	cursor: pointer;
+}
+
