@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { select_note, delete_note } from '../actions';
+import moment from 'moment';
 
 class Details extends Component {
 	componentDidMount() {
@@ -28,7 +29,7 @@ class Details extends Component {
 				<h4>Content</h4>
 				<p>{ note.content }</p>
 				<h4>Created on</h4>
-				<p> { note.created.toString() }</p>
+				<p> { moment(note.created).format('LLLL') }</p>
 				<div className="container">
 					<div className="buttons">
 						<Link to="/" className="btn btn-secondary">Go Back To Main Page</Link>

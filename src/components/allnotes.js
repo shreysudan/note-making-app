@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetch_notes, select_note } from '../actions/index.js';
 import _ from 'lodash';
+import moment from 'moment';
 
 class AllNotes extends Component  {
 	componentDidMount() {
@@ -20,7 +21,7 @@ class AllNotes extends Component  {
 				<tr key={note.id} onClick={this.handleClick.bind(this, note.id)}>
 					<td key={note.title}>{note.title}</td>
 					<td key={note.content}>{note.content.substring(0,100)}</td>
-					<td key={note.created}>{note.created.toString()}</td>
+					<td key={note.created}>{moment(note.created).format('LLLL')}</td>
 				</tr>
 			);
 		});
